@@ -41,9 +41,9 @@ router.get('/', (req, res) => {
     })
 })
 router.get('/:product_id', (req, res) => {
-    ProductCollection.findOne
-        // ProductCollection.findById(req.params.product_id)
-        ({ productID: req.params.product_id }, (errors, result) => {
+    console.log('GOT GET');
+    console.log( req.params.product_id)
+    ProductCollection.findOne({productID: req.params.product_id}, (errors, result) => {
             if (errors) {
                 res.send(errors)
             }
